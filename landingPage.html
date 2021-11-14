@@ -12,33 +12,32 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>landingPage</title>
   </head>
-  <body>
-    <!-- Build the banner slider -->
+  <body onload="slider()">
+     <!-- Build the banner slider -->
   <div class="wrapper">
-  <div class="wrapBanner">
-    <div class="bg-img">                         
-                  <img src="software-developer-g4f996d1ae_1920.jpg" />                   
-    <!-- </div> -->
-    <div class="wrapNav">
-      <div class="nav">
-      <h4 class="brandLogo">&lt;/&gt; DEVELOPER</h4> 
-        <div class="menu">
-          <a>HOME</a>
-          <a>ABOUT US</a>
-          <a>NEWS</a>
-          <a>CONTACT US</a>
-         </div>
+    <div class="wrapBanner">
+        <img class="bg-img" src="software-developer-g4f996d1ae_1920.jpg" id="backgroundImg" />
+      
+            <div class="wrapNav">
+              <div class="nav">
+                <h4 class="brandLogo">&lt;/&gt; DEVELOPER</h4> 
+                    <div class="menu">
+                      <a>HOME</a>
+                      <a>ABOUT US</a>
+                      <a>NEWS</a>
+                      <a>CONTACT US</a>
+                    </div>
+              </div>
+            </div>
+            <div class="content">
+              <pre class="contentHead">D E V E L O P M E N T</pre>
+              <p class="contentDefine">We are developer</p>
+                <div class="MoreInfo">
+                  <button class="btnReadmore">READMORE</button>
+                  <button class="btnLearnmore">LEARN MORE</button>
+                </div>
+            </div>
       </div>
-    </div>
-    <div class="content">
-        <pre class="contentHead">D E V E L O P M E N T</pre>
-        <p class="contentDefine">We are developer</p>
-        <div class="MoreInfo">
-            <button class="btnReadmore">READMORE</button>
-            <button class="btnLearnmore">LEARN MORE</button>
-        </div>
-    </div>
-  </div>
   <!-- Build this section with Bootstrap -->
   <section class="container vh-75">  
     <div class="d-flex justify-content-center">
@@ -79,8 +78,8 @@
   </section>
   <!-- Animate the numbers to make it count up from 0 -->
 
-  <div class="counterSection">
-    <div class="counterWrapper">
+  <div class="counterSection" >
+    <div class="counterWrapper" onscroll="">
      <div class="clientCount">
       <span  class="number1">1054</span>
       <h6>CLIENTS</h6>
@@ -135,9 +134,11 @@
       <div>
       <img src="technology-gc0433bfe5_1280.jpg">
     </div>
-     <div>
+   </div>  
+  </div>
   </div>
 <script>
+  
   const client = setInterval(clientTotal,10)
   let count0 = 0;
   function clientTotal() {
@@ -184,6 +185,31 @@
       clearInterval(team);
     }
   }
+
+
+
+  let backgroundImg = document.getElementById("backgroundImg");
+  const images = new Array(
+    "software-developer-g4f996d1ae_1920.jpg",
+    "startup-g536028e46_1920.jpg",
+    "software-development-g10f5670a4_1920.jpg",
+    "people-g562cf2401_1920.jpg"
+  );
+  const arrayLeng = images.length;
+  let i = 0;
+  function slider() {
+    console.log("object")
+    if ( i > (arrayLeng-1) ){
+      i = 0;
+    } 
+    backgroundImg.src = images[i];
+    i++;
+    setTimeout('slider()', 3000);
+    console.log("object")
+  }
+ 
+ 
 </script> 
+
   </body>
 </html> 
