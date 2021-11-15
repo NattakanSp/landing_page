@@ -29,6 +29,21 @@ html {
   justify-content: space-around;
   font-size: 1rem;
 }
+.menu-icon {
+  display: none;
+}
+@media screen and (max-width: 990px) {
+  a {
+    display: none;
+  }
+  .menu-icon {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: rgb(240, 238, 238);
+    margin: 6px 0;
+  }
+}
 .brandLogo {
   position: fixed;
   left: 10%;
@@ -68,6 +83,11 @@ a {
   background-color: transparent;
   color: white;
 }
+@media screen and (max-width: 990px) {
+  .btnReadmore {
+    display: none;
+  }
+}
 .btnLearnmore {
   font-size: 0.5rem;
   border: 1px solid white;
@@ -87,6 +107,18 @@ a {
   justify-content: space-around;
   padding-top: 50px;
   color: white;
+}
+@media screen and (max-width: 990px) {
+  .counterWrapper {
+    display: grid;
+    grid-template-columns: max-content;
+  }
+  .counterSection {
+    height: 50vh;
+    background-image: url("desert-ga55332a30_1920.jpg");
+    position: absolute;
+    opacity: 0.9;
+  }
 }
 .clientCount {
   display: flex;
@@ -117,9 +149,19 @@ a {
   font-weight: bold;
 }
 /* productCard */
+.linkTo {
+  margin-top: 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: lighter;
+  margin-right: 5px;
+}
+.linkTo:hover {
+  color: rgb(143, 136, 136);
+}
 .productSection {
-  height: 70vh;
-  /* margin-top: 15%; */
+  height: 60vh;
+  margin-top: 10%;
 }
 .tab {
   margin-top: 5%;
@@ -130,11 +172,26 @@ a {
 .tabProduct {
   margin-top: 20px;
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+}
+.tabItem {
+  margin-right: 10px;
 }
 .productCard {
   width: 100vw;
   display: grid;
   grid-template-columns: auto auto auto auto;
+}
+@media screen and (max-width: 990px) {
+  .productCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  img.productImg {
+    width: 100vw;
+  }
 }
 img {
   object-fit: cover;
